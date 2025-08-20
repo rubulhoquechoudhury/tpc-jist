@@ -1,0 +1,496 @@
+/* Activities Page Specific Styles */
+
+/* Activities Main Section */
+.activities-main {
+    padding: 80px 0;
+    background: linear-gradient(145deg, #f8f9ff 0%, #ffffff 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.activities-main::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 100%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(102, 126, 234, 0.03) 0%, transparent 70%);
+    animation: float 25s ease-in-out infinite;
+}
+
+/* Activity Box Styles */
+.activity-box {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+    margin-bottom: 4rem;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 3rem;
+    box-shadow: 0 15px 35px rgba(102, 126, 234, 0.08);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    z-index: 2;
+    border: 1px solid rgba(102, 126, 234, 0.1);
+}
+
+.activity-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.05), transparent);
+    transition: left 0.6s ease;
+}
+
+.activity-box:hover::before {
+    left: 100%;
+}
+
+.activity-box:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 50px rgba(102, 126, 234, 0.15);
+    border-color: rgba(102, 126, 234, 0.2);
+}
+
+/* Alternate layout for even boxes */
+.activity-box:nth-child(even) {
+    grid-template-columns: 1fr 1fr;
+}
+
+.activity-box:nth-child(even) .activity-content {
+    order: 2;
+}
+
+.activity-box:nth-child(even) .activity-image {
+    order: 1;
+}
+
+/* Activity Image */
+.activity-image {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease;
+}
+
+.activity-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.2) 0%, rgba(118, 75, 162, 0.2) 100%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 1;
+}
+
+.activity-box:hover .activity-image::before {
+    opacity: 1;
+}
+
+.activity-image img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+    border-radius: 15px;
+}
+
+.activity-box:hover .activity-image img {
+    transform: scale(1.05);
+}
+
+/* Activity Content */
+.activity-content {
+    padding: 1rem;
+    position: relative;
+    z-index: 2;
+}
+
+.activity-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    position: relative;
+}
+
+.activity-title::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 2px;
+    transition: width 0.4s ease;
+}
+
+.activity-box:hover .activity-title::after {
+    width: 100px;
+}
+
+.activity-description {
+    font-size: 1.1rem;
+    color: #64748b;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    text-align: justify;
+    font-weight: 400;
+}
+
+/* More Button */
+.more-btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 14px 28px;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.more-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.more-btn:hover::before {
+    left: 100%;
+}
+
+.more-btn:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 15px 40px rgba(102, 126, 234, 0.4);
+    background: linear-gradient(135deg, #7c8ef7 0%, #8a5cb5 100%);
+}
+
+.more-btn i {
+    transition: transform 0.3s ease;
+}
+
+.more-btn:hover i {
+    transform: rotate(90deg);
+}
+
+.more-btn.expanded {
+    background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+    box-shadow: 0 8px 25px rgba(231, 76, 60, 0.3);
+}
+
+.more-btn.expanded:hover {
+    background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+    box-shadow: 0 15px 40px rgba(231, 76, 60, 0.4);
+}
+
+.more-btn.expanded i {
+    transform: rotate(45deg);
+}
+
+/* Activity Modal */
+.activity-modal {
+    display: none;
+    position: fixed;
+    z-index: 3000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.activity-modal .modal-content {
+    background-color: white;
+    margin: 2% auto;
+    padding: 0;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 1000px;
+    height: 85vh;
+    position: relative;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    animation: slideIn 0.4s ease;
+}
+
+@keyframes slideIn {
+    from { 
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to { 
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    color: #fff;
+    font-size: 32px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 3001;
+    width: 45px;
+    height: 45px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.close-modal:hover {
+    background: rgba(231, 76, 60, 0.8);
+    transform: scale(1.1);
+}
+
+.modal-body {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+#activityFrame {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 15px;
+}
+
+/* Loading State */
+.activity-modal.loading .modal-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.activity-modal.loading .modal-content::before {
+    content: 'Loading...';
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.activity-modal.loading .close-modal {
+    display: none;
+}
+
+/* Responsive Design */
+@media (max-width: 968px) {
+    .activity-box {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 2rem;
+        margin-bottom: 3rem;
+    }
+
+    .activity-box:nth-child(even) .activity-content {
+        order: 1;
+    }
+
+    .activity-box:nth-child(even) .activity-image {
+        order: 2;
+    }
+
+    .activity-image img {
+        height: 250px;
+    }
+
+    .activity-title {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .activities-main {
+        padding: 60px 0;
+    }
+
+    .activity-box {
+        padding: 1.5rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .activity-image img {
+        height: 200px;
+    }
+
+    .activity-title {
+        font-size: 1.4rem;
+        margin-bottom: 1rem;
+    }
+
+    .activity-description {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .more-btn {
+        padding: 12px 24px;
+        font-size: 0.9rem;
+    }
+
+    .activity-modal .modal-content {
+        width: 95%;
+        height: 80vh;
+        margin: 5% auto;
+    }
+
+    .close-modal {
+        top: 10px;
+        right: 15px;
+        font-size: 28px;
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .activity-box {
+        padding: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .activity-image img {
+        height: 180px;
+    }
+
+    .activity-title {
+        font-size: 1.2rem;
+    }
+
+    .activity-description {
+        font-size: 0.95rem;
+        text-align: left;
+    }
+
+    .more-btn {
+        padding: 10px 20px;
+        font-size: 0.85rem;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .activity-modal .modal-content {
+        width: 98%;
+        height: 75vh;
+        margin: 8% auto;
+        border-radius: 10px;
+    }
+}
+
+/* Animation Classes */
+.animate-fade-in {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.animate-fade-in.delay-1 {
+    animation-delay: 0.1s;
+}
+
+.animate-fade-in.delay-2 {
+    animation-delay: 0.2s;
+}
+
+.animate-fade-in.delay-3 {
+    animation-delay: 0.3s;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Scroll Reveal Animation */
+.activity-box {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.activity-box.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Enhanced hover effects */
+.activity-box:hover .activity-content .activity-description {
+    color: #4a5568;
+}
+
+.activity-box:hover .more-btn {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+    }
+    50% {
+        box-shadow: 0 12px 35px rgba(102, 126, 234, 0.5);
+    }
+    100% {
+        box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+    }
+}
+
+/* Focus states for accessibility */
+.more-btn:focus {
+    outline: 3px solid rgba(102, 126, 234, 0.5);
+    outline-offset: 2px;
+}
+
+.close-modal:focus {
+    outline: 3px solid rgba(255, 255, 255, 0.5);
+    outline-offset: 2px;
+}

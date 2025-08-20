@@ -1,0 +1,1135 @@
+/* Simple Recruiters List Section */
+.recruiters-list-section {
+    margin: 60px 0;
+    padding: 40px 20px;
+    background: #f8f9fa;
+    border-radius: 10px;
+}
+
+.recruiters-list-section h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.recruiters-list-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: #667eea;
+    border-radius: 2px;
+}
+
+/* Simple Recruiters Grid */
+.recruiters-simple-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.recruiter-item {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border: 1px solid #e9ecef;
+}
+
+.recruiter-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.2);
+    border-color: #667eea;
+}
+
+.recruiter-logo {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.recruiter-logo img {
+    max-height: 50px;
+    max-width: 120px;
+    object-fit: contain;
+    filter: grayscale(30%);
+    transition: filter 0.3s ease;
+}
+
+.recruiter-item:hover .recruiter-logo img {
+    filter: grayscale(0%);
+}
+
+.recruiter-name {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #2c3e50;
+    display: block;
+}
+
+/* Fallback for missing logos */
+.recruiter-logo:empty::before {
+    content: '🏢';
+    font-size: 2rem;
+    opacity: 0.3;
+}
+
+.recruiter-category {
+    background: rgba(255, 255, 255, 0.7);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.recruiter-category:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(52, 152, 219, 0.15);
+}
+
+.recruiter-category h3 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #3498db;
+    display: inline-block;
+    position: relative;
+}
+
+.recruiter-names {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.recruiter-name {
+    background: white;
+    color: #2c3e50;
+    padding: 12px 20px;
+    border-radius: 25px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    border: 2px solid rgba(52, 152, 219, 0.2);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    display: inline-block;
+}
+
+.recruiter-name:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(52, 152, 219, 0.2);
+    border-color: #3498db;
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    color: white;
+}
+
+/* Responsive Design for Simple Recruiters */
+@media (max-width: 768px) {
+    .recruiters-list-section {
+        padding: 30px 15px;
+        margin: 40px 0;
+    }
+    
+    .recruiters-list-section h2 {
+        font-size: 1.8rem;
+    }
+    
+    .recruiters-simple-list {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 15px;
+    }
+    
+    .recruiter-item {
+        padding: 15px;
+    }
+    
+    .recruiter-logo {
+        height: 50px;
+        margin-bottom: 10px;
+    }
+    
+    .recruiter-logo img {
+        max-height: 40px;
+        max-width: 100px;
+    }
+    
+    .recruiter-name {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .recruiters-list-section {
+        padding: 20px 10px;
+    }
+    
+    .recruiters-list-section h2 {
+        font-size: 1.6rem;
+    }
+    
+    .recruiters-simple-list {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+    
+    .recruiter-item {
+        padding: 12px;
+    }
+    
+    .recruiter-logo {
+        height: 40px;
+        margin-bottom: 8px;
+    }
+    
+    .recruiter-logo img {
+        max-height: 35px;
+        max-width: 80px;
+    }
+    
+    .recruiter-name {
+        font-size: 0.8rem;
+    }
+}
+
+/* Recruiters Page Specific Styles */
+
+/* Page Header Enhancement */
+.page-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 120px 0 80px;
+    position: relative;
+    overflow: hidden;
+    color: white;
+    text-align: center;
+}
+
+.page-header::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+    animation: rotate 30s linear infinite;
+}
+
+.page-header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(180deg, transparent 0%, #ffffff 100%);
+}
+
+.page-header .container {
+    position: relative;
+    z-index: 2;
+}
+
+.page-header h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    animation: fadeInUp 0.8s ease;
+}
+
+.page-header p {
+    font-size: 1.3rem;
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto;
+    animation: fadeInUp 0.8s ease 0.2s both;
+}
+
+/* Recruiters Section */
+.recruiters-section {
+    padding: 40px 0;
+    background: linear-gradient(180deg, #ffffff 0%, #f8f9ff 100%);
+}
+
+/* Recruiters Intro */
+.recruiters-intro {
+    text-align: center;
+    margin-bottom: 4rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.recruiters-intro h2 {
+    font-size: 3rem;
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    position: relative;
+}
+
+.recruiters-intro h2::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 2px;
+}
+
+.recruiters-intro p {
+    font-size: 1.2rem;
+    color: #64748b;
+    line-height: 1.8;
+    margin-top: 2rem;
+}
+
+/* Companies Tier Section */
+.companies-tier {
+    margin-bottom: 5rem;
+    position: relative;
+}
+
+.companies-tier h3 {
+    font-size: 2.2rem;
+    color: #2c3e50;
+    margin-bottom: 2.5rem;
+    text-align: center;
+    font-weight: 600;
+    position: relative;
+}
+
+.companies-tier h3::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 2px;
+}
+
+/* Companies Grid */
+.companies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+/* Company Card Base Styles */
+.company-card {
+    background: white;
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    border: 2px solid transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.company-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.05), transparent);
+    transition: left 0.6s ease;
+}
+
+.company-card:hover::before {
+    left: 100%;
+}
+
+.company-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 25px 50px rgba(102, 126, 234, 0.15);
+}
+
+/* Premium Company Cards */
+.company-card.premium {
+    background: linear-gradient(135deg, #fff 0%, #f8f9ff 100%);
+    border: 2px solid rgba(102, 126, 234, 0.2);
+    position: relative;
+}
+
+.company-card.premium::after {
+    content: '✨ Premium Partner';
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    box-shadow: 0 2px 10px rgba(102, 126, 234, 0.3);
+}
+
+.company-card.premium:hover {
+    border-color: rgba(102, 126, 234, 0.4);
+    box-shadow: 0 30px 60px rgba(102, 126, 234, 0.2);
+}
+
+/* Startup Company Cards */
+.company-card.startup {
+    background: linear-gradient(135deg, #fff 0%, #fff8f0 100%);
+    border: 2px solid rgba(255, 165, 0, 0.2);
+}
+
+.company-card.startup::after {
+    content: '🚀 Startup';
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: linear-gradient(135deg, #ff9500 0%, #ff6b00 100%);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    box-shadow: 0 2px 10px rgba(255, 165, 0, 0.3);
+}
+
+.company-card.startup:hover {
+    border-color: rgba(255, 165, 0, 0.4);
+    box-shadow: 0 25px 50px rgba(255, 165, 0, 0.15);
+}
+
+/* Company Logo */
+.company-card img {
+    width: 100px;
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 1.5rem;
+    transition: all 0.3s ease;
+    filter: grayscale(20%);
+}
+
+.company-card:hover img {
+    transform: scale(1.1);
+    filter: grayscale(0%);
+}
+
+/* Company Info */
+.company-info {
+    width: 100%;
+}
+
+.company-info h4 {
+    font-size: 1.4rem;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.company-card:hover .company-info h4 {
+    color: #667eea;
+}
+
+.company-info .industry {
+    color: #667eea;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    padding: 4px 12px;
+    background: rgba(102, 126, 234, 0.1);
+    border-radius: 20px;
+    display: inline-block;
+}
+
+.company-info .roles {
+    color: #64748b;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+    min-height: 3rem;
+}
+
+.company-info .package {
+    background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 25px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    display: inline-block;
+    box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+    transition: all 0.3s ease;
+}
+
+.company-card:hover .package {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+}
+
+/* Recruitment Statistics */
+.recruitment-stats {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 4rem;
+    border-radius: 30px;
+    margin: 5rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.recruitment-stats::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+    animation: rotate 40s linear infinite;
+}
+
+.recruitment-stats h3 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: white;
+    margin-bottom: 3rem;
+    font-weight: 700;
+    position: relative;
+    z-index: 2;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.stats-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    position: relative;
+    z-index: 2;
+}
+
+.stat-card {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 2rem;
+    border-radius: 20px;
+    text-align: center;
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.stat-card:hover {
+    transform: translateY(-8px) scale(1.05);
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.stat-label {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+/* Recruiter Info Section */
+.recruiter-info {
+    background: linear-gradient(135deg, #f8f9ff 0%, #ffffff 100%);
+    padding: 3rem 4rem;
+    border-radius: 30px;
+    margin: 2rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.recruiter-info::before {
+    content: '';
+    position: absolute;
+    top: -20%;
+    right: -20%;
+    width: 40%;
+    height: 140%;
+    background: radial-gradient(circle, rgba(102, 126, 234, 0.05) 0%, transparent 70%);
+    animation: float 20s ease-in-out infinite;
+}
+
+.recruiter-info h3 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 3rem;
+    font-weight: 700;
+    position: relative;
+    z-index: 2;
+}
+
+.recruiter-info h3::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 2px;
+}
+
+.recruiter-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 4rem;
+    position: relative;
+    z-index: 2;
+}
+
+.recruiter-text h4 {
+    font-size: 1.5rem;
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    position: relative;
+}
+
+.recruiter-text h4::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 40px;
+    height: 3px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 2px;
+}
+
+.recruiter-text ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 3rem;
+}
+
+.recruiter-text ul li {
+    color: #64748b;
+    margin-bottom: 1rem;
+    position: relative;
+    padding-left: 2rem;
+    line-height: 1.6;
+}
+
+.recruiter-text ul li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #4CAF50;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.recruiter-text ol {
+    color: #64748b;
+    line-height: 1.8;
+    padding-left: 1.5rem;
+}
+
+.recruiter-text ol li {
+    margin-bottom: 0.8rem;
+    font-weight: 500;
+}
+
+.recruiter-text strong {
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+/* Contact Card */
+.recruiter-contact {
+    display: flex;
+    align-items: flex-start;
+}
+
+.contact-card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 25px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    width: 100%;
+    border: 1px solid rgba(102, 126, 234, 0.1);
+    transition: all 0.3s ease;
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 25px 50px rgba(102, 126, 234, 0.15);
+}
+
+.contact-card h4 {
+    font-size: 1.4rem;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.contact-card p {
+    color: #64748b;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.contact-details {
+    margin-bottom: 2rem;
+}
+
+.contact-details p {
+    color: #64748b;
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    font-size: 0.95rem;
+}
+
+.contact-details i {
+    color: #667eea;
+    font-size: 1rem;
+}
+
+.contact-card .btn {
+    width: 100%;
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+/* Animations */
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(180deg); }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .page-header h1 {
+        font-size: 2.5rem;
+    }
+    
+    .page-header p {
+        font-size: 1.1rem;
+    }
+    
+    .recruiters-intro h2 {
+        font-size: 2.2rem;
+    }
+    
+    .companies-tier h3 {
+        font-size: 1.8rem;
+    }
+    
+    .companies-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .company-card {
+        padding: 1.5rem;
+    }
+    
+    .stats-cards {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+    
+    .recruitment-stats,
+    .recruiter-info {
+        padding: 2rem;
+        margin: 3rem 0;
+    }
+    
+    .recruitment-stats h3,
+    .recruiter-info h3 {
+        font-size: 2rem;
+    }
+    
+    .recruiter-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .contact-card {
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-header {
+        padding: 100px 0 60px;
+    }
+    
+    .page-header h1 {
+        font-size: 2rem;
+    }
+    
+    .recruiters-intro h2 {
+        font-size: 1.8rem;
+    }
+    
+    .companies-tier h3 {
+        font-size: 1.6rem;
+    }
+    
+    .stats-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .stat-number {
+        font-size: 2.5rem;
+    }
+    
+    .company-card img {
+        width: 80px;
+        height: 60px;
+    }
+    
+    .company-card.premium::after,
+    .company-card.startup::after {
+        top: 10px;
+        right: 10px;
+        font-size: 0.6rem;
+        padding: 3px 8px;
+    }
+    
+    .recruiter-text h4 {
+        font-size: 1.3rem;
+    }
+    
+    .contact-card {
+        padding: 1.5rem;
+    }
+}
+
+/* Why Recruit From Us Section */
+.why-recruit-section {
+    margin: 60px 0;
+    padding: 60px 0;
+    background: linear-gradient(135deg, rgba(74, 144, 226, 0.05) 0%, rgba(80, 200, 120, 0.05) 100%);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+}
+
+.why-recruit-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, #4a90e2, #50c878);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.why-recruit-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(135deg, #4a90e2, #50c878);
+    border-radius: 2px;
+}
+
+.why-recruit-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.why-recruit-card {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 
+        0 10px 30px rgba(0, 0, 0, 0.1),
+        0 1px 8px rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.why-recruit-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(74, 144, 226, 0.1), transparent);
+    transition: left 0.5s ease;
+}
+
+.why-recruit-card:hover::before {
+    left: 100%;
+}
+
+.why-recruit-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 
+        0 20px 40px rgba(74, 144, 226, 0.2),
+        0 5px 15px rgba(0, 0, 0, 0.1);
+    border-color: rgba(74, 144, 226, 0.3);
+}
+
+.why-recruit-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 25px;
+    background: linear-gradient(135deg, #4a90e2, #50c878);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.why-recruit-card:hover .why-recruit-icon {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 10px 25px rgba(74, 144, 226, 0.3);
+}
+
+.why-recruit-card h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+.why-recruit-card p {
+    color: #5a6c7d;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+/* All Recruiters Section */
+.all-recruiters-section {
+    margin: 60px 0;
+    padding: 50px 0;
+    background: linear-gradient(135deg, rgba(52, 152, 219, 0.05) 0%, rgba(155, 89, 182, 0.05) 100%);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+}
+
+.all-recruiters-section h3 {
+    text-align: center;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 40px;
+    background: linear-gradient(135deg, #3498db, #9b59b6);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+}
+
+.all-recruiters-section h3::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(135deg, #3498db, #9b59b6);
+    border-radius: 2px;
+}
+
+.recruiters-list {
+    display: grid;
+    gap: 40px;
+}
+
+.list-category h4 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #3498db;
+    display: inline-block;
+}
+
+.company-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.company-tag {
+    background: rgba(255, 255, 255, 0.9);
+    color: #2c3e50;
+    padding: 12px 20px;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border: 2px solid rgba(52, 152, 219, 0.2);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    backdrop-filter: blur(5px);
+}
+
+.company-tag:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(52, 152, 219, 0.2);
+    border-color: #3498db;
+    background: rgba(52, 152, 219, 0.1);
+}
+
+.company-tag.premium {
+    background: linear-gradient(135deg, rgba(241, 196, 15, 0.1), rgba(230, 126, 34, 0.1));
+    border-color: #f39c12;
+    color: #d68910;
+    font-weight: 600;
+}
+
+.company-tag.premium:hover {
+    background: linear-gradient(135deg, rgba(241, 196, 15, 0.2), rgba(230, 126, 34, 0.2));
+    box-shadow: 0 8px 20px rgba(243, 156, 18, 0.3);
+    border-color: #f39c12;
+}
+
+.company-tag.startup {
+    background: linear-gradient(135deg, rgba(46, 204, 113, 0.1), rgba(26, 188, 156, 0.1));
+    border-color: #27ae60;
+    color: #229954;
+    font-weight: 600;
+}
+
+.company-tag.startup:hover {
+    background: linear-gradient(135deg, rgba(46, 204, 113, 0.2), rgba(26, 188, 156, 0.2));
+    box-shadow: 0 8px 20px rgba(39, 174, 96, 0.3);
+    border-color: #27ae60;
+}
+
+/* Responsive Design for New Sections */
+@media (max-width: 768px) {
+    .why-recruit-section h2 {
+        font-size: 2rem;
+    }
+    
+    .why-recruit-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .why-recruit-card {
+        padding: 30px 20px;
+    }
+    
+    .all-recruiters-section h3 {
+        font-size: 1.8rem;
+    }
+    
+    .list-category h4 {
+        font-size: 1.3rem;
+    }
+    
+    .company-tag {
+        padding: 10px 16px;
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .why-recruit-section {
+        padding: 40px 0;
+        margin: 40px 0;
+    }
+    
+    .why-recruit-section h2 {
+        font-size: 1.6rem;
+    }
+    
+    .why-recruit-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+    
+    .why-recruit-card h3 {
+        font-size: 1.2rem;
+    }
+    
+    .all-recruiters-section {
+        padding: 30px 0;
+        margin: 40px 0;
+    }
+    
+    .all-recruiters-section h3 {
+        font-size: 1.5rem;
+    }
+    
+    .list-category h4 {
+        font-size: 1.2rem;
+    }
+    
+    .company-tag {
+        padding: 8px 14px;
+        font-size: 0.8rem;
+    }
+}
